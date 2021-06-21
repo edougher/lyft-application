@@ -4,7 +4,7 @@ function App(props) {
   let [response, setResponse] = useState({});
   let [postData, setPostData] = useState("");
 
-  const body = { string: `${postData}` };
+  const body = { string_to_cut: `${postData}` };
 
   const fetchFromApi = async () => {
     const reqObj = {
@@ -14,7 +14,7 @@ function App(props) {
     };
 
     try {
-      const response = await fetch("http://localhost:9000/test", reqObj);
+      const response = await fetch("https://cut-string-lyft.herokuapp.com/test", reqObj);
       const data = await response.json()
       console.log(data)
       setResponse(data)

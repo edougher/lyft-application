@@ -2,6 +2,9 @@
 
 # dependencies
 node_modules/
+build/
+/cut-string-lyft/
+
 /.pnp
 .pnp.js
 

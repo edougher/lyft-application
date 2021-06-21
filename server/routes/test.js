@@ -20,7 +20,7 @@ function cleanUp(str) {
 }
 //
 router.post("/", function (req, res, next) {
-  const stringToCut = req.body.string;
+  const stringToCut = req.body.string_to_cut;
   //res.send({ "return_string": "hello world" })
   res.status(200).json({ return_string: cutString(stringToCut, cleanUp) });
 });
