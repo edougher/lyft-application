@@ -10,6 +10,7 @@ This file handles the logic and acts as the controller when the POST is recieved
 
 Here is a working demo:
 https://cut-string-c9a20c.netlify.app/
+(The response can be slow at times)
 
 This app was built using React and Express.
 
