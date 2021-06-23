@@ -84,6 +84,7 @@ function App(props) {
           <Typography className={classes.returnString}>{JSON.stringify(response)}</Typography>
           <Typography variant="h7" >The return_string will be every third <b>letter</b> of string that was submitted.</Typography>
         </form>
+      <a href="https://github.com/edougher/lyft-application">Github</a>
       </Paper>
     </Container>
   );
