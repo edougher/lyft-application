@@ -4,13 +4,12 @@ import {
   Paper,
   Typography,
   Button,
-  Input,
-  Grid,
+  Input
 } from "@material-ui/core";
 import useStyles from "./styles";
 
 function App(props) {
-  let [response, setResponse] = useState({});
+  let [response, setResponse] = useState({"return_string": ""});
   let [postData, setPostData] = useState("");
   let classes = useStyles();
 
@@ -45,11 +44,15 @@ function App(props) {
     fetchFromApi();
   };
 
+  const handleClear = () => {
+   setPostData(postData)
+  }
+
   return (
     <Container component="main" maxWidth="xs">
-      <Paper className={classes.paper} elevation={3}>
+      <Paper className={classes.paper} elevation={9}>
       <Typography>{JSON.stringify(body)}</Typography>
-        <form className={classes.form} onSubmit={handleSubmit}>
+        <form className={classes.form}>
           <Input
             placeholder="Enter a string"
             fullWidth
@@ -59,6 +62,7 @@ function App(props) {
           />
           <Button
             className={classes.submit}
+            onClick={handleSubmit}
             type="submit"
             fullWidth
             variant="contained"
@@ -66,7 +70,19 @@ function App(props) {
           >
             Submit
           </Button>
-          <Typography>{JSON.stringify(response)}</Typography>
+          <Typography variant="h9">(Warning: Response may take a few seconds)</Typography>
+          <Button
+            className={classes.clear}
+            type="clear"
+            onClick={handleClear}
+            fullWidth
+            variant="contained"
+            color="secondary"
+          >
+            Clear
+          </Button>
+          <Typography className={classes.returnString}>{JSON.stringify(response)}</Typography>
+          <Typography variant="h7" >The return_string will be every third <b>letter</b> of string that was submitted.</Typography>
         </form>
       </Paper>
     </Container>
